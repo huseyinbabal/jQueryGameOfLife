@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Game of Life Demo</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="js/gol.js"></script>
+    <script src="js/gol-demo.js"></script>
+
+    <style>
+        td {
+            width: 10px;
+            height: 10px;
+            border: 1px solid #E0C9C8;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+        }
+        body {
+            padding-top: 70px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle">
+                    <span class="sr-only">Github</span>
+                </button>
+                <a class="navbar-brand" href="#">jQuery Game of Life</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row jumbotron">
+        <div id="golBoard">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            <button class="btn btn-primary btn-lg" role="button" id="play"><span class="glyphicon glyphicon-play"></span> Run</button>
+        </div>
+        <div class="col-md-1">
+            <button class="btn btn-primary btn-lg" role="button" id="step"><span class="glyphicon glyphicon-forward"></span> Step</button>
+        </div>
+        <div class="col-md-1">
+            <button class="btn btn-primary btn-lg" role="button" id="stop"><span class="glyphicon glyphicon-pause"></span> Stop</button>
+        </div>
+        <div class="col-md-1">
+            <button class="btn btn-primary btn-lg" role="button" id="refresh"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
+        </div>
+    </div>
+
+    <hr/>
+    <div class="row">
+        <div class="col-md-2">
+            <button class="btn btn-primary btn-lg" role="button" id="example1"><span class="glyphicon glyphicon-play"></span> Still Life</button>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary btn-lg" role="button" id="example2"><span class="glyphicon glyphicon-play"></span> Gosper Glider Gun</button>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary btn-lg" role="button" id="example3"><span class="glyphicon glyphicon-play"></span> Acorn</button>
+        </div>
+    </div>
+
+    <div class="row">
+            <br/>
+        <div class="col-lg-12">
+            <br/>
+            <h4>Game of Life</h4>
+            <p><em>The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970.
+                The "game" is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves.</em>
+
+                This jQuery Game of Life project developed by <a href="http://twitter.com/lemiorhan">@huseyinbabal</a> during a <a href="http://twitter.com/hashtag/coderetreat">#coderetreat</a> event organized by <a href="http://twitter.com/lemiorhan">@lemiorhan</a>.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <br/>
+            <h4>Rules</h4>
+            <ol>
+                <li>If cell is alive and has more than 3 alive neighbours, it dies</li>
+                <li>If cell is alive and has 2, or 3 alive neighbours, it survives</li>
+                <li>If cell is alive and has less than 2 alive neighbours, it dies due to low population</li>
+                <li>If cell is dead and has 3 alive neighbours, it reproducts</li>
+            </ol>
+        </div>
+        <div class="col-lg-6">
+            <br/>
+            <h4>How to use</h4>
+            <p>You can set your initial state by clicking on the board above, then <code>Run</code> in order to see what is next states. Also, you can see
+            the next states one by one, use <code>Step</code> button. Furthermore, you can <code>Stop</code> simulation, or <code>Refresh</code> game of life completely. You can see example
+            initial states below.</p>
+        </div>
+    </div>
+
+</div> <!-- /container -->
+<a href="https://github.com/cubuzoa"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 10000000;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+</body>
+<script>
+    jQuery(document).ready(function () {
+        GameOfLife.init(40);
+    });
+</script>
+</html>
