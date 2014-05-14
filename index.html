@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Game of Life Demo</title>
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/gol.js"></script>
+  <script src="js/gol-demo.js"></script>
+
+  <style>
+    td {
+        width: 10px;
+        height: 10px;
+        border: 1px solid #E0C9C8;
+        padding: 0;
+    	margin: 0;
+    	cursor: pointer;
+    }
+  </style>	
+</head>
+<body>
+	<div class="row">
+		<div class="col-md-6">
+			<div id="golBoard">
+
+  			</div>
+		</div>
+		<div class="col-md-6">
+			<a href="#" class="btn btn-primary btn-lg" role="button" id="step"><i class="fa fa-play"></i>Step</a>
+			<a href="#" class="btn btn-primary btn-lg" role="button" id="play"><i class="fa fa-play"></i>Run</a>
+			<a href="#" class="btn btn-primary btn-lg" role="button" id="stop"><i class="fa fa-play"></i>Stop</a>
+		</div>
+	</div>
+</body>
+<script>
+	jQuery(document).ready(function() {
+		GameOfLife.init(20);
+	});
+</script>
+</html>
